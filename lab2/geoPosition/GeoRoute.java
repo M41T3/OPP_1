@@ -8,8 +8,8 @@ public class GeoRoute implements Distance, Comparable<GeoRoute>{
 	private ArrayList<GeoPosition> waypoints;
 	
 	public GeoRoute(String name) {
-		this.name = name;
-			
+		this.name = name;	
+		this.waypoints = new ArrayList<GeoPosition>();
 	}
 		
 	public GeoRoute(String name, ArrayList<GeoPosition> waypoints) {

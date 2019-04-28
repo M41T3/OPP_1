@@ -22,7 +22,7 @@ public class RouteData {
 	}
 
 	public static GeoRoute createAlsterRoute2() {
-		GeoRoute route = new GeoRoute("Au�enalster");
+		GeoRoute route = new GeoRoute("Außenalster");
 
 		route.addWaypoint(new GeoPosition(53.556254, 10.021650));	// HAW
 		route.addWaypoint(new GeoPosition(53.561192, 10.013245));	// Alster (Lohm�hlenstra�e)
