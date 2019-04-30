@@ -1,9 +1,10 @@
 package lab2.geoPosition;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import lab1.geoPosition.GeoPosition;
 
 public class GeoRoute implements Distance, Comparable<GeoRoute>{
-
+	
 	private String name;
 	private ArrayList<GeoPosition> waypoints;
 	
@@ -42,7 +43,7 @@ public class GeoRoute implements Distance, Comparable<GeoRoute>{
 	}
 	
 	public GeoPosition[] getWaypoints() {
-		return (GeoPosition[]) this.waypoints.toArray();	//??
+		return (GeoPosition[]) this.waypoints.toArray();	//??(GeoPosition[])
 	}
 	
 	public double getDistance() {
@@ -66,7 +67,8 @@ public class GeoRoute implements Distance, Comparable<GeoRoute>{
 
 	@Override
 	public String toString() {
-		return this.name + " (" + this.getDistance() + " km)";
+		DecimalFormat f = new DecimalFormat("#0.0");
+		return this.name + " (" + f.format(this.getDistance()) + " km)";
 	}
 	
 	
