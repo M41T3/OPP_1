@@ -1,4 +1,5 @@
 package lab2.geoPosition;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import lab1.geoPosition.GeoPosition;
@@ -31,7 +32,12 @@ public class GeoRoute implements Distance, Comparable<GeoRoute>{
 	}
 	
 	public void removeWaypoint(int index) {
-		this.waypoints.remove(index);
+		if(this.waypoints.isEmpty() && this.waypoints.size() < index) { 
+			//System.out.println("empty");
+		}else {
+			//System.out.println("not empty");
+			this.waypoints.remove(index);
+		}
 	}
 	
 	public int getNumberWaypoints() {
@@ -43,7 +49,13 @@ public class GeoRoute implements Distance, Comparable<GeoRoute>{
 	}
 	
 	public GeoPosition[] getWaypoints() {
-		return (GeoPosition[]) this.waypoints.toArray();	//??(GeoPosition[])
+		
+		if(this.waypoints.isEmpty()) {
+			
+			return new GeoPosition[0];
+		}else{
+			return this.waypoints.toArray(new GeoPosition[this.waypoints.size()]);
+		}
 	}
 	
 	public double getDistance() {
